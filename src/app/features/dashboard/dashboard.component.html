@@ -1,0 +1,38 @@
+<app-page-header
+  eyebrow="Overview"
+  title="Good morning, Arpita 👋"
+  subtitle="Here’s what is happening across your operations today."
+  action="New automation"
+/>
+<section class="stats">
+  @for (s of stats; track s.label) {
+    <app-stat-card
+      [label]="s.label"
+      [value]="s.value"
+      [change]="s.change"
+      [icon]="s.icon"
+      [tone]="s.tone"
+    />
+  }
+</section>
+<section class="grid">
+  <app-chart-card />
+  <article class="health">
+    <div>
+      <h3>Operational health</h3>
+      <p>Live system performance</p>
+    </div>
+    <div class="score">
+      <span>94</span>
+      <small>Excellent</small>
+    </div>
+    @for (h of health; track h.name) {
+      <div class="health-row">
+        <span>{{ h.name }}</span>
+        <strong>{{ h.value }}%</strong>
+        <div><i [style.width.%]="h.value"></i></div>
+      </div>
+    }
+  </article>
+</section>
+<app-data-table [rows]="activities" />

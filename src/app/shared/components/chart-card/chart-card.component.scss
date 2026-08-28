@@ -1,0 +1,44 @@
+@use 'mixins' as ui;
+
+.chart {
+  @include ui.card-surface;
+  padding: 1.2rem;
+}
+h3 {
+  margin: 0;
+  color: var(--ink);
+}
+p {
+  margin: 0.3rem 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.bars {
+  height: 190px;
+  display: flex;
+  align-items: end;
+  gap: 5%;
+  padding: 1rem 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 46px,
+    var(--border) 47px
+  );
+}
+.bars span {
+  flex: 1;
+  border-radius: 7px 7px 2px 2px;
+  background: linear-gradient(#8d7cff, #6757e8);
+  min-height: 12px;
+}
+.bars span:nth-child(2n) {
+  background: linear-gradient(#65d8e8, #28b8d1);
+}
+.labels {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.55rem;
+  color: var(--muted);
+}

@@ -1,0 +1,23 @@
+<header>
+  <button class="menu" (click)="menu.emit()">☰</button>
+  <label>
+    ⌕
+    <input placeholder="Search anything…" />
+    <kbd>⌘ K</kbd>
+  </label>
+  <div class="actions">
+    <button (click)="theme.toggle()">{{ theme.dark() ? '☀' : '☾' }}</button>
+    <button class="bell" (click)="notices.clear()">
+      ♢
+      @if (notices.unread()) {
+        <i>{{ notices.unread() }}</i>
+      }
+    </button>
+    <span class="avatar">AD</span>
+    <div class="user">
+      <strong>{{ auth.user()?.name }}</strong>
+      <small>Administrator</small>
+    </div>
+    <button (click)="auth.logout()">↪</button>
+  </div>
+</header>

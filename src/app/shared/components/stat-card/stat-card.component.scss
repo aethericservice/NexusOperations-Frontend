@@ -1,0 +1,43 @@
+@use 'mixins' as ui;
+
+.stat {
+  @include ui.card-surface;
+  padding: 1.1rem;
+  display: flex;
+  gap: 0.9rem;
+}
+.icon {
+  height: 44px;
+  width: 44px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  background: #eee;
+}
+p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0 0 0.3rem;
+}
+h2 {
+  font-size: 1.6rem;
+  margin: 0;
+  color: var(--ink);
+}
+small {
+  color: #16a085;
+  font-weight: 700;
+}
+.violet .icon {
+  background: #eeeaff;
+}
+.cyan .icon {
+  background: #dcf8ff;
+}
+.green .icon {
+  background: #dcfaed;
+}
+.orange .icon {
+  background: #fff0dc;
+}

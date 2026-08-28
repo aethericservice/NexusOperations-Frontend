@@ -1,0 +1,12 @@
+<div class="filters">
+  <label>
+    ⌕
+    <input placeholder="Search workspace…" (input)="search.emit($any($event.target).value)" />
+  </label>
+  <select>
+    <option>All statuses</option>
+    <option>Active</option>
+    <option>Pending</option>
+  </select>
+  <button>⚙ Filters</button>
+</div>

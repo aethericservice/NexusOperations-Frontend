@@ -1,0 +1,131 @@
+<div class="landing">
+  <header>
+    <a class="logo" routerLink="/">
+      <span>✦</span>
+      <strong>OpsAI</strong>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#product">Product</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#resources">Resources⌄</a>
+    </nav>
+    <div class="actions">
+      <a routerLink="/login">Login</a>
+      <a class="primary" routerLink="/login">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="product">
+      <div class="hero-copy">
+        <p class="eyebrow">⚙ AI PLATFORM FOR MODERN OPERATIONS</p>
+        <h1>
+          AI-Powered
+          <br />
+          Business Operations
+          <br />
+          <em>for the Modern Enterprise</em>
+        </h1>
+        <p class="lead">
+          Connect your systems, detect issues in real time, and automate actions across your
+          business with AI.
+        </p>
+        <div class="hero-actions">
+          <a class="primary" routerLink="/login">
+            Get Started Free
+            <span>→</span>
+          </a>
+          <a class="secondary" href="mailto:sales@opsai.example">
+            Request Demo
+            <span>▣</span>
+          </a>
+        </div>
+        <div class="benefits">
+          <span>✓ No credit card required</span>
+          <span>✓ Quick setup</span>
+          <span>✓ Cancel anytime</span>
+        </div>
+      </div>
+
+      <div class="visual" aria-label="OpsAI dashboard preview">
+        <div class="glow"></div>
+        <div class="dashboard-card">
+          <aside>
+            <b>✦ OpsAI</b>
+            <span class="active">Overview</span>
+            <span>Signals</span>
+            <span>Events</span>
+            <span>Settings</span>
+          </aside>
+          <div class="preview">
+            <h3>Overview</h3>
+            <div class="mini-stats">
+              <div>
+                <small>Total Events</small>
+                <b>2,453</b>
+                <i>+12.5%</i>
+              </div>
+              <div>
+                <small>Resolved</small>
+                <b>1,856</b>
+                <i>+8.2%</i>
+              </div>
+              <div>
+                <small>MTTR</small>
+                <b>32m</b>
+                <i>-15.3%</i>
+              </div>
+            </div>
+            <div class="charts">
+              <div class="line-chart">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="donut"><b>2,453</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="alert">
+          <span>!</span>
+          <div>
+            <b>Anomaly detected</b>
+            <small>API latency spiked on Checkout Service</small>
+          </div>
+          <button>View Details</button>
+        </div>
+        <div class="integration cloud">☁</div>
+        <div class="integration database">▤</div>
+        <div class="integration slack">✣</div>
+      </div>
+    </section>
+
+    <section class="metrics" id="solutions">
+      @for (metric of metrics; track metric.label) {
+        <article>
+          <span>{{ metric.icon }}</span>
+          <div>
+            <strong>{{ metric.value }}</strong>
+            <b>{{ metric.label }}</b>
+            <small>{{ metric.note }}</small>
+          </div>
+        </article>
+      }
+    </section>
+
+    <section class="trusted" id="resources">
+      <p>TRUSTED BY INNOVATIVE COMPANIES</p>
+      <div>
+        <span>◉ Acme Corp</span>
+        <span>◈ Globex</span>
+        <span>◆ INITECH</span>
+        <span>◒ Stark Industries</span>
+        <span>♜ Wayne Enterprises</span>
+        <span>◩ Cyberdyne Systems</span>
+      </div>
+    </section>
+  </main>
+</div>

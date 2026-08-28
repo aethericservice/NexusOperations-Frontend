@@ -1,0 +1,149 @@
+<div class="org-page">
+  <aside>
+    <a class="logo" routerLink="/">
+      <span>✦</span>
+      <strong>OpsAI</strong>
+    </a>
+    <nav>
+      <a>
+        ⌂
+        <span>Overview</span>
+      </a>
+      <a>
+        ▣
+        <span>Events</span>
+      </a>
+      <a>
+        ▥
+        <span>Dashboards</span>
+      </a>
+      <a>
+        ⌘
+        <span>Integrations</span>
+      </a>
+      <a>
+        ◇
+        <span>Workflows</span>
+      </a>
+      <a>
+        ◉
+        <span>AI Insights</span>
+      </a>
+      <a>
+        ⬡
+        <span>Agents</span>
+      </a>
+      <a>
+        ⚙
+        <span>Settings</span>
+      </a>
+    </nav>
+    <div class="user">
+      <i>AD</i>
+      <div>
+        <b>{{ auth.user()?.name || 'Arpita Das' }}</b>
+        <small>Super Admin</small>
+      </div>
+      <span>⌄</span>
+    </div>
+    <div class="help">
+      <b>? &nbsp; Need help?</b>
+      <a href="mailto:support@opsai.example">Contact Support ↗</a>
+    </div>
+  </aside>
+
+  <header>
+    <span>
+      ♧
+      <i>3</i>
+    </span>
+    <b>AD</b>
+  </header>
+
+  <main>
+    <section class="selector">
+      <h1>Select Your Organization</h1>
+      <p>Choose an organization to continue to your workspace.</p>
+      <label class="search">
+        <span>⌕</span>
+        <input
+          [ngModel]="search()"
+          (ngModelChange)="search.set($event)"
+          placeholder="Search organizations..."
+        />
+      </label>
+      <div class="org-list">
+        @for (org of filteredOrganizations(); track org.id) {
+          <button type="button" [class.selected]="selectedId() === org.id" (click)="choose(org)">
+            <i class="radio"></i>
+            <span class="org-icon" [style.--org-color]="org.color">{{ org.icon }}</span>
+            <span class="org-copy">
+              <b>
+                {{ org.name }}
+                @if (org.current) {
+                  <em>Current</em>
+                }
+              </b>
+              <small>{{ org.workspace }}</small>
+            </span>
+            <span class="arrow">›</span>
+          </button>
+        } @empty {
+          <p class="empty">No organizations match your search.</p>
+        }
+      </div>
+      <button class="add" type="button" (click)="addOrganization()">
+        ⊕ &nbsp; Add New Organization
+      </button>
+    </section>
+
+    <section class="security">
+      <div class="city">
+        <span></span>
+        <span></span>
+        <span></span>
+        <b>🔒</b>
+      </div>
+      <h2>
+        Secure. Isolated.
+        <br />
+        <em>Scalable.</em>
+      </h2>
+      <p>
+        Each organization operates in its own secure workspace with isolated data, access controls,
+        and configurations.
+      </p>
+      <article>
+        <i>◆</i>
+        <div>
+          <b>Data Isolation</b>
+          <small>Complete separation of data, users, and configurations across tenants.</small>
+        </div>
+      </article>
+      <article>
+        <i>▣</i>
+        <div>
+          <b>Role-Based Access</b>
+          <small>Granular permissions ensure the right people have the right access.</small>
+        </div>
+      </article>
+      <article>
+        <i>▱</i>
+        <div>
+          <b>Scalable by Design</b>
+          <small>Add teams and workspaces as your organization grows.</small>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <span>◆</span>
+    <div>
+      <b>Enterprise-Grade Security</b>
+      <small>
+        Your data is encrypted in transit and at rest. We never share cross-tenant data.
+      </small>
+    </div>
+    <a href="#">Learn more about security ↗</a>
+  </footer>
+</div>

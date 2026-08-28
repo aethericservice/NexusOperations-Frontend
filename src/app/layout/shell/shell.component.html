@@ -1,0 +1,8 @@
+<app-sidebar [collapsed]="sidebarClosed()" />
+<div class="shell">
+  <app-header (menu)="toggleSidebar()" />
+  <main>
+    <router-outlet />
+    <app-footer />
+  </main>
+</div>

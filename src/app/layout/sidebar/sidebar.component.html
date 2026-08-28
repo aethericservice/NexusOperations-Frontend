@@ -1,0 +1,29 @@
+<aside [class.closed]="collapsed()">
+  <div class="brand">
+    <span>✦</span>
+    <strong>
+      OpsPilot
+      <i>AI</i>
+    </strong>
+  </div>
+  <nav>
+    @for (group of groups; track group.title) {
+      <p>{{ group.title }}</p>
+      @for (item of group.items; track item.route) {
+        <a [routerLink]="item.route" routerLinkActive="active">
+          <b>{{ item.icon }}</b>
+          <span>{{ item.label }}</span>
+          @if (item.badge) {
+            <em>{{ item.badge }}</em>
+          }
+        </a>
+      }
+    }
+  </nav>
+  <div class="upgrade">
+    <span>🚀</span>
+    <strong>Scale faster</strong>
+    <small>Unlock advanced AI tools</small>
+    <button>Upgrade plan</button>
+  </div>
+</aside>

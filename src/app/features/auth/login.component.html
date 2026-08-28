@@ -1,0 +1,63 @@
+<div class="login">
+  <section>
+    <div class="brand">
+      ✦ OpsPilot
+      <i>AI</i>
+    </div>
+    <div class="copy">
+      <span>AI-POWERED OPERATIONS</span>
+      <h1>
+        Run your business
+        <br />
+        <b>smarter and faster.</b>
+      </h1>
+      <p>
+        Automate workflows, discover insights and bring every team together in one intelligent
+        command center.
+      </p>
+      <div class="metrics">
+        <div>
+          <strong>38%</strong>
+          <small>Lower operating costs</small>
+        </div>
+        <div>
+          <strong>12h</strong>
+          <small>Saved per employee</small>
+        </div>
+        <div>
+          <strong>99.9%</strong>
+          <small>Platform uptime</small>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mobile-brand">✦ OpsPilot AI</div>
+      <p class="hello">WELCOME BACK</p>
+      <h2>Sign in to your workspace</h2>
+      <p>Use the demo credentials to explore all 21 screens.</p>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <label>
+        Work email
+        <input [(ngModel)]="email" name="email" type="email" required [disabled]="isLoading" />
+      </label>
+      <label>
+        Password
+        <input [(ngModel)]="password" name="password" type="password" required [disabled]="isLoading" />
+      </label>
+      <div class="row">
+        <label class="remember">
+          <input type="checkbox" checked [disabled]="isLoading" />
+          Remember me
+        </label>
+        <a (click)="auth.forgotPassword(email)" [style.cursor]="isLoading ? 'not-allowed' : 'pointer'" [style.opacity]="isLoading ? 0.5 : 1">Forgot password?</a>
+      </div>
+      <button type="submit" [disabled]="isLoading">
+        <span *ngIf="isLoading">Signing in...</span>
+        <span *ngIf="!isLoading">Sign in securely →</span>
+      </button>
+      <small class="demo">Demo: demo@acme.ai / any password</small>
+    </form>
+  </main>
+</div>

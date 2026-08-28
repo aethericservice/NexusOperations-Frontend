@@ -1,0 +1,83 @@
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.health {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow);
+}
+h3 {
+  margin: 0;
+  color: var(--ink);
+}
+p {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0.3rem 0;
+}
+.score {
+  text-align: center;
+  margin: 1rem auto;
+}
+.score span {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary);
+  background: conic-gradient(var(--primary) 94%, var(--border) 0);
+  border: 10px solid var(--card);
+  outline: 8px solid #eeeaff;
+}
+.score small {
+  display: block;
+  color: #16a085;
+  font-weight: 800;
+  margin-top: 0.7rem;
+}
+.health-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem;
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.health-row > div {
+  grid-column: 1/-1;
+  background: var(--soft);
+  height: 6px;
+  border-radius: 99px;
+}
+.health-row i {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #6c5ce7, #52d2df);
+}
+@media (max-width: 1100px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .grid,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}

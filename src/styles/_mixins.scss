@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use 'tokens' as token;
+
+@mixin card-surface($radius: token.$card-radius) {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: $radius;
+  box-shadow: var(--shadow);
+}
+
+@mixin gradient-button {
+  border: 0;
+  border-radius: token.$control-radius;
+  background: linear-gradient(135deg, token.$primary, token.$primary-dark);
+  color: #fff;
+  font-weight: 700;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 3px solid rgba(token.$primary, 0.32);
+    outline-offset: 3px;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  $width: map.get(token.$breakpoints, $breakpoint);
+
+  @if $width {
+    @media (max-width: $width) {
+      @content;
+    }
+  } @else {
+    @error 'Unknown breakpoint: #{$breakpoint}';
+  }
+}

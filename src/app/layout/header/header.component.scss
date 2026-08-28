@@ -1,0 +1,99 @@
+header {
+  height: 68px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 1.4rem;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.menu {
+  display: none;
+}
+label {
+  border: 1px solid var(--border);
+  background: var(--soft);
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  color: var(--muted);
+  min-width: 290px;
+}
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  width: 200px;
+}
+kbd {
+  font-size: 0.62rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.15rem 0.35rem;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-left: auto;
+}
+.actions button,
+.menu {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1rem;
+}
+.bell {
+  position: relative;
+}
+.bell i {
+  position: absolute;
+  top: -7px;
+  right: -6px;
+  background: #ef5272;
+  color: #fff;
+  font-size: 0.55rem;
+  border-radius: 99px;
+  padding: 0.1rem 0.3rem;
+  font-style: normal;
+}
+.avatar {
+  background: linear-gradient(135deg, #6c5ce7, #36c9d9);
+  color: #fff;
+  border-radius: 10px;
+  height: 36px;
+  width: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+.user {
+  display: grid;
+}
+.user strong {
+  font-size: 0.78rem;
+  color: var(--ink);
+}
+.user small {
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+@media (max-width: 900px) {
+  .menu {
+    display: block;
+  }
+  label {
+    display: none;
+  }
+}
+@media (max-width: 560px) {
+  .user {
+    display: none;
+  }
+}

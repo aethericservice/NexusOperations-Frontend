@@ -1,0 +1,17 @@
+<article class="chart">
+  <div>
+    <h3>{{ title() }}</h3>
+    <p>{{ subtitle() }}</p>
+  </div>
+  <div class="bars">
+    @for (v of values(); track $index) {
+      <span [style.height.%]="v"></span>
+    }
+  </div>
+  <div class="labels">
+    <small>Mon</small>
+    <small>Wed</small>
+    <small>Fri</small>
+    <small>Sun</small>
+  </div>
+</article>

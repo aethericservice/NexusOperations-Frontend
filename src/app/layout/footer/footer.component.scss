@@ -1,0 +1,13 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0 0.3rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+@media (max-width: 500px) {
+  footer {
+    display: block;
+    line-height: 1.8;
+  }
+}

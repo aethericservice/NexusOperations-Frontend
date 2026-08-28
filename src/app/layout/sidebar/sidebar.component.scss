@@ -1,0 +1,104 @@
+@use 'mixins' as ui;
+
+aside {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 245px;
+  background: #17152d;
+  color: #d6d2ed;
+  padding: 1.25rem 0.9rem;
+  overflow-y: auto;
+  z-index: 10;
+  transition: 0.2s;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.1rem;
+  padding: 0.2rem 0.55rem 1.2rem;
+}
+.brand > span {
+  background: linear-gradient(135deg, #7d6cff, #38cadd);
+  height: 34px;
+  width: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+.brand i {
+  font-style: normal;
+  color: #55d2e0;
+}
+nav > p {
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #77718f;
+  margin: 1.1rem 0.65rem 0.45rem;
+}
+a {
+  @include ui.focus-ring;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #a9a4bd;
+  padding: 0.67rem 0.7rem;
+  border-radius: 10px;
+  margin: 0.12rem 0;
+  font-size: 0.83rem;
+}
+a:hover,
+a.active {
+  color: #fff;
+  background: linear-gradient(90deg, #6c5ce744, transparent);
+}
+a.active {
+  box-shadow: inset 3px 0 #7d6cff;
+}
+a b {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+a em {
+  margin-left: auto;
+  background: #ef5272;
+  color: #fff;
+  border-radius: 99px;
+  padding: 0.12rem 0.4rem;
+  font-style: normal;
+  font-size: 0.62rem;
+}
+.upgrade {
+  margin-top: 1.5rem;
+  background: linear-gradient(145deg, #28234b, #1f1c3a);
+  border: 1px solid #3a345f;
+  border-radius: 14px;
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.3rem;
+}
+.upgrade small {
+  color: #8f89a5;
+}
+.upgrade button {
+  margin-top: 0.4rem;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.55rem;
+  background: #6c5ce7;
+  color: #fff;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  aside {
+    transform: translateX(-100%);
+  }
+  aside:not(.closed) {
+    transform: translateX(0);
+    box-shadow: 20px 0 40px #0005;
+  }
+}

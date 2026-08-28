@@ -1,0 +1,37 @@
+<div class="table-card">
+  <div class="card-title">
+    <div>
+      <h3>Recent activity</h3>
+      <p>Latest operations across your workspace</p>
+    </div>
+    <button>View all</button>
+  </div>
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Type</th>
+          <th>Owner</th>
+          <th>Status</th>
+          <th>Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of rows(); track row.name) {
+          <tr>
+            <td>
+              <strong>{{ row.name }}</strong>
+            </td>
+            <td>{{ row.type }}</td>
+            <td>{{ row.owner }}</td>
+            <td>
+              <span [class]="'pill ' + row.status.toLowerCase()">{{ row.status }}</span>
+            </td>
+            <td>{{ row.time }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

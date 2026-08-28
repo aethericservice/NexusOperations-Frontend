@@ -1,0 +1,17 @@
+@use 'mixins' as ui;
+
+.shell {
+  margin-left: 245px;
+  min-height: 100vh;
+  background: var(--bg);
+}
+main {
+  padding: 1.55rem;
+  max-width: 1500px;
+  margin: auto;
+}
+@include ui.respond-to(tablet) {
+  .shell {
+    margin-left: 0;
+  }
+}

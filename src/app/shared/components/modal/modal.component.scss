@@ -1,0 +1,26 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: #1118;
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+section {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 1.5rem;
+  width: min(520px, 90vw);
+  position: relative;
+}
+button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border: 0;
+  background: transparent;
+  font-size: 1.3rem;
+}
+h2 {
+  margin-top: 0;
+}

@@ -1,0 +1,8 @@
+<article class="stat" [class]="'stat ' + tone()">
+  <div class="icon">{{ icon() }}</div>
+  <div>
+    <p>{{ label() }}</p>
+    <h2>{{ value() }}</h2>
+    <small>↗ {{ change() }} this month</small>
+  </div>
+</article>

@@ -1,0 +1,30 @@
+.filters {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+label {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 0.65rem 0.8rem;
+  flex: 1;
+  min-width: 220px;
+  color: var(--muted);
+}
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  width: calc(100% - 24px);
+}
+select,
+button {
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--card);
+  color: var(--ink);
+  padding: 0.65rem 0.8rem;
+}

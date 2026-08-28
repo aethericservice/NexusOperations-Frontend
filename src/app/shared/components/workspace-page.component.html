@@ -1,0 +1,41 @@
+<app-page-header
+  [eyebrow]="config().eyebrow"
+  [title]="config().title"
+  [subtitle]="config().subtitle"
+  [action]="config().action"
+/>
+<app-filter-bar />
+<section class="cards">
+  @for (card of config().cards; track card.title) {
+    <article>
+      <div class="icon">{{ card.icon }}</div>
+      <div class="copy">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.text }}</p>
+      </div>
+      <span class="tag">{{ card.tag }}</span>
+      <button>Open →</button>
+    </article>
+  }
+</section>
+<section class="detail">
+  <div>
+    <span class="spark">✦</span>
+    <h2>{{ config().title }} command center</h2>
+    <p>
+      Connect live data, automate routine work, and monitor every result from one secure workspace.
+    </p>
+    <button class="primary">Get started</button>
+    <button class="secondary">View documentation</button>
+  </div>
+  <div class="visual">
+    <div class="line l1"></div>
+    <div class="line l2"></div>
+    <div class="line l3"></div>
+    <div class="nodes">
+      <i>✓</i>
+      <i>AI</i>
+      <i>↗</i>
+    </div>
+  </div>
+</section>

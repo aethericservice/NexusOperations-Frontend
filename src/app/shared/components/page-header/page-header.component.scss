@@ -1,0 +1,40 @@
+.page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.eyebrow {
+  color: var(--primary) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem !important;
+}
+h1 {
+  font-size: 1.75rem;
+  margin: 0;
+  color: var(--ink);
+}
+p {
+  color: var(--muted);
+  margin: 0.35rem 0 0;
+}
+.primary {
+  border: 0;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, var(--primary), #8e7dff);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 8px 20px #6c5ce733;
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .page-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
